@@ -2,73 +2,236 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title> Dzulee </title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
-
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/malsup/jquery.cycle2.js"></script>
-    <script type="text/javascript" src="assets/malsup/jquery.cycle2.carousel.js"></script>
-    <script type="text/javascript" src="assets/malsup/jquery.cycle2.scrollVert.js"></script>
-
-    <script src="https://kit.fontawesome.com/0ff01931c2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet"  href="style.css">
-
-
-
-</head>
-<body>
-	<!-----Hero section------>
-
-	<div class="hero" id="home">
-		
-		<nav>
-			 <h1> Denis <span>Ambetsa Portfolio</span><br>
-			 	<a href="Denis Ambetsa CV.pdf" download style="font-size: 15px;">Download cv</a></h1>
-			 <ul id="sidemenu">
-			 	<li class="active"><a href="#home">Home</a></li>
-			 	<li class="active"><a href="about_us.html">about us</a></li>
-			 	<li><a href="#services">service</a></li>
-			    <li><a href="#my-work">projects</a></li>
-			    <li><a href="#contact">contact us</a>
-			    	 
-			    	<li class="sub-nav">contacts details</li>
-			    	<li class="sub-nav">chat with us</li>
-			    
-
-
-			    </li>
-			    <i class="fa solid fa-times"style="background-color: white;font-size: 20px;width: 15px;" onclick="closemenu()"></i>
-			   
-			 </ul>
-			 <i class="fa solid fa-bars" style="background-color: white;font-size: 20px;background-size: 10px;" onclick="openmenu()"></i>
-
-		</nav>
-	<div class="container">
-		<div class="homepage">
-			<h1> Welcome To Ambetsa<br> IT Support,  Web Designing , Data analysis & <span>project management</span></h1>
-		     <p>
-	        As a web designer, I harness the power of HTML (Hyper Text Markup Language), CSS (Cascading Style Sheet), JavaScript (JS), and PHP to craft visually appealing designs and imbue tab links with functionality. The portfolio showcased here is a testament to my craftsmanship and expertise in this field.</p><br>
-	        <p>
-	        A hallmark of my work is the creation of compelling and narrative-driven dashboards, showcasing my prowess in data analysis. Leveraging tools like Power BI, I adeptly distill insights from raw data, illuminating key performance indicators (KPIs) and offering valuable insights.</p><br>
-	       
-
-	     </div>
-	 </div>
-
-
 	
-	</div>
-	<!----Our services--->
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	 <link rel="stylesheet" href="style.css">
 
-	<section id="services">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-QWqQv6K3v4zQ/3p+1mJz4j0oF/T9X2k5FfM6w4z4P6fQ7C3/P5v1j8Y7L6C2rF" crossorigin="anonymous"></script>
+	
+	 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://kit.fontawesome.com/0ff01931c2.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalHpgW81N02B9tT0oQ22U/Ww0r2m6Cq30zF/yC2y0C/e2E8FwX0f3b5x4z5A5QzQ1QzQzQzQzQzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script type="text/javascript" src="main.js"></script>
+<style>
+	 @keyframes grow {
+    0%, 100% {
+      transform: scale(1.0); /* Start and end at original size */
+    }
+    50% {
+      transform: scale(1.2); /* Grow slightly larger at midpoint */
+    }
+  }
+
+  .font-grow {
+    animation: grow 2s infinite ease-in-out;
+    display: inline-block; /* Needed for transform */
+  }
+
+  /* New CSS for large text size */
+  .large-text {
+    font-size: 4rem; /* Equivalent to text-6xl in Tailwind, adjust as needed */
+    line-height: 1; /* Adjust line height if necessary for visual balance */
+  }
+
+  /* Basic styling for the spans to mimic original appearance */
+  .animated-letter {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--primary-green);
+    border-radius: 9999px;
+    color: var(--text-on-dark);
+    font-weight: bold;
+  }
+</style>
+ 
+
+
+ 
+  </head>
+<body>
+	<!-------the  nar section-->
+	<section class="navbar-section"> <!-- Removed d-flex here, not needed for this wrapper -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3"> <!-- Added navbar-dark and bg-dark -->
+            <div class="container-fluid px-md-5 px-3"> <!-- Fixed typo: div class -->
+                <h1 class="navbar-brand m-0">
+                    Denis <span class="text-warning">Ambetsa Portfolio</span>
+                    <br>
+                    <a href="Denis Ambetsa CV.pdf" download class="text-white-50 small text-decoration-none">Download CV</a>
+                </h1>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about_us">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#my-work">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact-section">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</section>
+<!-----Hero section------>
+
+
+<section id="home-section">
+	
+		<div class="homepage">
+				<div class="welcome-note">
+					<div>
+						<span class="animated-letter large-text font-grow" style="animation-delay:0s;">A</span>
+						<span class="animated-letter large-text font-grow" style="animation-delay:0.1s;">M</span>
+						<span class="animated-letter large-text font-grow" style="animation-delay:0.2s;">B</B></span>
+						<span class="animated-letter large-text font-grow" style="animation-delay:0.3s;">E</Em></span>
+						<span class="animated-letter large-text font-grow" style="animation-delay:0.4s;">T</span>
+						<span class="animated-letter large-text font-grow" style="animation-delay:0.5s;">S</span>
+						<span class="animated-letter large-text font-grow" style="animation-delay:0.6s;">A</span>
+					</div>
+					<div>
+						<P class="dev-text">dev</P>
+					</div>
+											
+				</div>
+	<!-------introducing section-->
+
+				<div class="intro">
+			         <h1>
+					 IT Support,  Web Designing , Data analysis & <span>project management</span>
+					</h1>
+		            
+					 <br>
+	            </div>
+				<div>
+					<div class="card2">
+						<div>
+							  <p class="h2">Let’s Build Better — Together.</p>
+							<p>
+								I help businesses grow with smart design, data-driven decisions, 
+								and dependable virtual support. Whether you're launching a website,
+								analyzing performance, managing projects, or streamlining operations — I'm ready to get started.
+								<br>
+
+								Ready to collaborate?<br>
+								<button class=" button btn btn-secondary">Let’s Talk </button> or <button class="button btn btn-secondary btn-outline-secondary"> Hire Me Today </button>
+							</p>
+						</div>
+						
+					</div>
+					
+
+
+				</div>
+				<box-icon type='logo' name='linkedin'></box-icon>
+				<box-icon type='logo' name='twitter'></box-icon>
+				<box-icon type='logo' name='github'></box-icon>
+	   
+	</div>
+	<a href="https://wa.me/YOUR_PHONE_NUMBER_HERE?text=Hello%20Denis%20Ambetsa%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20chat!"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i></a>
+</section>
+
+
+<!--------------------about section statrt----------------------------->
+
+<section class="about_us py-5" id="about_us">
+    <div class="container">
+        <div class="row d-flex flex-md-row align-items-center justify-content-center about-item">
+            <div class="col-12 col-md-6 salutation order-2 order-md-1">
+                <div>
+                    <h1 class="salutation-title mb-3">About me</h1>
+                    <p class="words mb-4">
+                        Guided by a strong moral compass and strict adherence to industry regulations, Ambetsa Tech Solutions stands for integrity in every engagement.
+                        We champion the well-being of our clients, society, and the broader digital landscape.
+                        From our base in Kenya, we seamlessly extend our expertise globally through effective virtual consultations, ensuring your projects are supported wherever you are.
+                        Our delight comes from transforming client discussions into robust, high-functioning solutions that not only meet but often surpass expectations.
+                        Since August 2022, we've been building a reputation for excellence, one project at a time.
+                    </p>
+                </div>
+                <div class="tab_titles d-flex justify-content-center justify-content-md-start mb-4">
+                    <p class="active-link p-2 me-4" ondblclick="opentab('education')">Education</p>
+                    <p class="p-2 me-4" ondblclick="opentab('skills')">Skills</p>
+                    <p class="p-2" ondblclick="opentab('experience')">Experience</p>
+                </div>
+                <div>
+                    <div class="tab_content main_r" id="education">
+                        <p class="mb-2"><span>MERN Mongo DB, Express, React And Node-JS</span> <br> -Ongoing Internship Training <br> Frontend and Backend Developer <br> Edureka</p>
+                        <p class="mb-2"><span>Bsc in Information Technology</span> <br> -Graduate 2017-2022 <br> Taita Taveta University</p>
+                        <p class="mb-2">Certificate in Data Analysis</p>
+                        <p class="mb-2">Certificate in Project Management</p>
+                    </div>
+                    <div class="tab_content" id="skills">
+                        <p class="mb-2">Web Development</p>
+                        <p class="mb-2">Data Analysis</p>
+                        <p class="mb-2">Project Management</p>
+                        <p class="mb-2">Java Script</p>
+                        <p class="mb-2">Python</p>
+                        <p class="mb-2">SQL</p>
+                    </div>
+                    <div class="tab_content" id="experience">
+                        <p class="mb-2">IT Support Specialist at XYZ Corp (2021-2022)</p>
+                        <p class="mb-2">Data Analyst at ABC Ltd (2020-2021)</p>
+                        <p class="mb-2">Project Manager at DEF Inc (2019-2020)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 image text-center order-1 order-md-2 mb-4 mb-md-0">
+                <img src="photos/portfolio_image.jpg" alt="Denis Ambetsa" class="about-img img-fluid">
+                <p class="text-center mt-3 d-none">Hello, I'm Denis Ambetsa...</p> </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-stretch">
+                <div class="col-12 col-md-4 p-2 col1 mb-4 mb-md-0">
+                    <div class="card h-100 p-4 text-center">
+                        <i class="fa solid fa-heart fa-3x mb-3 text-warning"></i>
+                        <h1 class="text-warning mb-2">Mission</h1>
+                        <p class="text-dark">We are delighted to be an epitome of great service and quality produce to our clients.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-2 col1 mb-4 mb-md-0">
+                    <div class="card h-100 p-4 text-center">
+                        <i class="fa fa-star fa-3x mb-3 text-warning"></i>
+                        <h1 class="text-warning mb-2">Vision</h1>
+                        <p class="text-dark">We are delighted to be an epitome of great service and quality produce to our clients.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-2 col1">
+                    <div class="card h-100 p-4 text-center">
+                        <i class="fa fa-quote-right fa-3x mb-3 text-warning"></i>
+                        <h1 class="text-warning mb-2">Company Statement</h1>
+                        <p class="text-dark">We are delighted to be an epitome of great service and quality produce to our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+	<!---------------------------------------------------------Our services------------------------------------------------------->
+<section>
+	<div id="services">
 				<h2>Book Us Now For Our Services</h2>
             <div class="services-container">
                 
@@ -109,173 +272,155 @@
                     <a href="service.html#virtual-assistant">Learn More</a>
                 </div>
             </div>
-        </section>
-<!--
-	my projects
---->
- <div id="my-work" style="padding-top: 90px;">
-			
-			<div class="container">
-				<h1>MY WORK</h1>
-				<div class="my-work">		
-				<div class="col">	
-					
-				<img src="photos/HomePage background.png">
-				<h3>Home Background Image</h3>
-			<p>This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.</P>
+        </div>
+</section>
 
 
-				
-				</div>
-				<div class="col">
-
-					
-				<img src="photos/p infographics orange.png">
-				<h3>Infographics design  </h3>
-			<p>This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.</P>
-
-
-				</div>
-				<div class="col">
-					
-				<img src="photos/carmodels.png">
-				<h3>Car models <br> Power Bi</h3>
-			<p>This project analyzes the different types of car makes with piston Horse power and  comparison.
+<section class="achievements">
+  <div class="achievement-card">
+    <span class="number">500+</span>
+    <span class="label">Projects Completed</span>
+  </div>
+  <div class="achievement-card">
+    <span class="number">50+</span>
+    <span class="label">Recommendations Received</span>
+  </div>
+</section>
+<section>
 
 
-				</P>
+	<div class="featured-work">
+		<div class="analysis whyme-card">
+			<p>This are projects to demonstrate a knack for transforming raw data into actionable insights,<br> building robust data pipelines, and creating dynamic, user-friendly dashboards.</p>
+			<div class="tab_titles d-flex justify-content-center justify-content-md-start mb-4">
+                    <p class="active-link p-2 me-4" ondblclick="opentab('powerbi')">Power BI</p>
+                    <p class="p-2 me-4" ondblclick="opentab('python')">Python</p>
+                    <p class="p-2" ondblclick="opentab('sql')">SQL</p>
+                </div>
+				 <div>
+                    <div class="tab_content main_r" id="powerbi">
+                        <p class="mb-2">Sales Dashboard</p>
+                        <p class="mb-2">Car models</p>
 
+                    </div>
+                    <div class="tab_content" id="python">
+                        <p class="mb-2">Web Development</p>
+                        <p class="mb-2">Data Analysis</p>
+                        <p class="mb-2">Project Management</p>
+                        <p class="mb-2">Java Script</p>
+                        <p class="mb-2">Python</p>
+                        <p class="mb-2">SQL</p>
+                    </div>
+                    <div class="tab_content" id="sql">
+                        <p class="mb-2">IT Support Specialist at XYZ Corp (2021-2022)</p>
+                        <p class="mb-2">Data Analyst at ABC Ltd (2020-2021)</p>
+                        <p class="mb-2">Project Manager at DEF Inc (2019-2020)</p>
+                    </div>
+                </div>
 
+		</div>
+		<div class="Project-management whyme-card">
+			<p>These projects are different but in a number of ways support my work and expertise in analysis</p>
+			<div class="tab_titles d-flex justify-content-center justify-content-md-start mb-4">
+                    <p class="active-link p-2 me-4" ondblclick="opentab('webdesign')">Web design</p>
+                    <p class="p-2 me-4" ondblclick="opentab('portfoliodesign')">Portfolio design</p>
+                    <p class="p-2" ondblclick="opentab('ecommerce')">Ecommerce website</p>
+                </div>
+				 <div>
+                    <div class="tab_content main_r" id="webdesign">
+                        <p class="mb-2"><span>MERN Mongo DB, Express, React And Node-JS</span> <br> -Ongoing Internship Training <br> Frontend and Backend Developer <br> Edureka</p>
+                        <p class="mb-2"><span>Bsc in Information Technology</span> <br> -Graduate 2017-2022 <br> Taita Taveta University</p>
+                        <p class="mb-2">Certificate in Data Analysis</p>
+                        <p class="mb-2">Certificate in Project Management</p>
+                    </div>
+                    <div class="tab_content" id="portfoliodesign">
+                        <p class="mb-2">Web Development</p>
+                        <p class="mb-2">Data Analysis</p>
+                        <p class="mb-2">Project Management</p>
+                        <p class="mb-2">Java Script</p>
+                        <p class="mb-2">Python</p>
+                        <p class="mb-2">SQL</p>
+                    </div>
+                    <div class="tab_content" id="ecommerce">
+                        <p class="mb-2">IT Support Specialist at XYZ Corp (2021-2022)</p>
+                        <p class="mb-2">Data Analyst at ABC Ltd (2020-2021)</p>
+                        <p class="mb-2">Project Manager at DEF Inc (2019-2020)</p>
+                    </div>
+                </div>
 
-				</div>
-				<div class="col">
-					
-					
-				<img src="photos/power BI.png">
-				<h3>Sales dashboard <br> Power Bi</h3>
-				<p>This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.</P>
+		</div>
+		<div class="Virtual-assistant whyme-card">
+			<p>These projects are different but in a number of ways support my work and expertise in Virtual Assistant</p>
+			<div class="tab_titles d-flex justify-content-center justify-content-md-start mb-4">
+                    <p class="active-link p-2 me-4" ondblclick="opentab('social-media-mngmnt')">Personal assistant</p>
+                    <p class="p-2 me-4" ondblclick="opentab('data_entry')">Data Entry</p>
+                    <p class="p-2" ondblclick="opentab('research')">Research</p>
+                </div>
+				 <div>
+                    <div class="tab_content main_r" id="social-media-mngmnt">
+                        <p class="mb-2">Inbox management</p>
+                        <p class="mb-2">Calendar management</p>
+                        <p class="mb-2">Call center management</p>
+                        <p class="mb-2">Travel iteneray</p>
+                    </div>
+                    <div class="tab_content" id="skills">
+                        <p class="mb-2">Web Development</p>
+                        <p class="mb-2">Data Analysis</p>
+                        <p class="mb-2">Project Management</p>
+                        <p class="mb-2">Java Script</p>
+                        <p class="mb-2">Python</p>
+                        <p class="mb-2">SQL</p>
+                    </div>
+                    <div class="tab_content" id="experience">
+                        <p class="mb-2">IT Support Specialist at XYZ Corp (2021-2022)</p>
+                        <p class="mb-2">Data Analyst at ABC Ltd (2020-2021)</p>
+                        <p class="mb-2">Project Manager at DEF Inc (2019-2020)</p>
+                    </div>
+                </div>
 
-				
-			   </div>
-			   <div class="col">
-			   	
-					
-				<a href="https://app.powerbi.com/view?r=eyJrIjoiMjU5ZDk5NjEtMTI1Ni00NzI1LTgyODQtMTkyMjNjZjI1M2IzIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9"><img src="photos/power BI.png"></a>
-				<h3>Sales dashboard <br> Power Bi</h3>
-				<p>This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.</P>
-
-				
-			   </div>
-			   <div class="col">
-			   
-					
-				<img src="photos/power BI.png">
-				<h3>Sales dashboard <br> Power Bi</h3>
-			<p>This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.
-				This project was in totality an idea of analysis with a goal to fundamentally showcase how sales has been achieved and who are good in the job.</P>
-
-
-				
-			   </div>
-		        </div>
-	           </div>
-         </div>
-<!------ comments
-<div id="contact" style="padding-top: 90px;">
-	<div class="container">
-	<h1>Contact information</h1>
-	<div class="contact">
-	
-	
-	
-	<div>
-		<img src="PHOTOS/logo.png" style="padding-left: 10px;">
-		<div>
-	     <div >
-	     <p> <i class="fa fa-location-arrow"style="font-size: 30px;width: 30px;"></i>location<br>PO BOX 220<br>POSTAl 20106<br>Molo<br>DISTRICT</p>
-	      </div>
-	     <div>
-	    <p>Dzulee<br>DENIS JULIUS AMBETSA<br> <i class="fa fa-envelope-square"style="font-size: 30px;width: 30px;"></i></a>dennisambetsa63@gmail.com<br> <i class="fa fa-phone"style="font-size: 30px;width: 30px;"></i>0799964580<br></p>            
-	     </div>
-	 </div>
-	</div>
-	</div>
-	</div>
-
-
-
-
-<section class="comment-section">
-	<div class="row">
-	<div class="col-1">
-		<a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-linkedin"style="background-color:;font-size: 30px;width: 30px;"></i></a>
-		<a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-twitter"style="background-color:;font-size: 30px;width: 30px;"></i></a>
-		<a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-facebook"style="background-color:;font-size: 30px;width: 30px;"></i></a>
-		<a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-youtube"style="background-color:;font-size: 30px;width: 30px;"></i></a>
-		<p>Reach out for virtual assistant, office desk,<br>
-		 data analysis or project management task</p>
-
-
-	</div>
-	<div class="col-2">
-		<form name="submit-to-google-sheet">
-			<input type="text" name="Name" placeholder="Your name"required>
-			<input type="text" id="Email-field" name="Email" onkeyup ="validateEmail()" placeholder="Your email"required><br>
-			<span id="error"></span>
-			<p>Describe your task details below or leave a comment</p>
-		<textarea name="Message" placeholder="task description or any comments"required  rows="7"> </textarea>
-		<button class="btn">Send</button>
-</form>
-<span id="msg" style="margin-top:-40px;display: block;"></span>
-
+		</div>
 		
 	</div>
-
+</section>
 </div>
+<!-------------------Contact section------------------------------>
+<section id="contact-section"> <div class="contact">
+        <h3>Get in touch</h3>
+        <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your name" required>
+            <input type="text" id="Email-field" name="Email" onkeyup="validateEmail()" placeholder="Your email" required><br>
+            <span id="error"></span>
+            <p>Describe your task details below or leave a comment</p>
+            <textarea name="Message" placeholder="task description or any comments" required rows="7"></textarea>
+            <button class="btn">Send</button>
+        </form>
+    </div>
+</section>
 
-</section>---->
+<footer id="footer">
+  <div class="row">
+    <div class="card4">
+      <img src="logo.png" class="logo">
+      <p>We value the integrity, the most that comes from within and that which creates family</p>
+      <a href="https://www.linkedin.com/in/ambetsa/"> <i class="fa fa-linkedin" style="font-size: 30px;width: 30px;color: var(--primary-green);"></i></a>
+      <a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-twitter" style="background-color: var(--primary-light);font-size: 30px;width: 30px;color: var(--primary-green);"></i></a>
+      <a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-facebook" style="background-color: var(--primary-light);font-size: 30px;width: 30px;color: var(--primary-orange);"></i></a>
+      <a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-youtube" style="background-color: var(--primary-light);font-size: 30px;width: 30px;color: var(--primary-orange);"></i></a>
+    </div>
 
-
-
-	<footer id="contact">
-		<div class="row">
-			<div class="col4">
-				<img src="logo.png" class="logo">
-				<p>We value the integrity, the most that comes from within and that which creates family</p>
-				 <a href="https://www.linkedin.com/in/ambetsa/"> <i class="fa fa-linkedin"style="font-size: 30px;width: 30px;"></i></a>
-				 <a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-twitter"style="background-color:;font-size: 30px;width: 30px;"></i></a>
-		<a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-facebook"style="background-color:;font-size: 30px;width: 30px;"></i></a>
-		<a href="https://www.linkedin.com/in/ambetsa/"><i class="fa fa-youtube"style="background-color:;font-size: 30px;width: 30px;"></i></a>
+    <div class="card4">
+      <h3>Office</h3>
+      <p>Utawala - Githunguri</p>
+      <p>PO BOX 2200-0100 Nairobi</p>
+      <a href=""><i class="fa fa-envelope-square"></i> dennisambesa63@gmail.com</a><br>
+       <a href=""><i class="fa fa-phone"></i>+254 799 964 580</a><br>
+       <a href=""><i class="fa fa-phone"></i>+254 769 579 340</a>
 	
-			</div>
+    </div>
 
-			<div class="col4">
-				<h3>Office</h3>
-				<p>Utawala - Githunguri</p>
-				<p>PO BOX 2200-0100 Nairobi</p>
-				<a href=""><i class="fa fa-envelope-square"></i> dennisambesa63@gmail.com</a><br>
-				 <a href=""><i class="fa fa-phone"></i>+254 799 964 580</a><br>
-				 <a href=""><i class="fa fa-phone"></i>+254 769 579 340</a>
-			
-			</div>
-
-			<div class="col4">
-				<h3>Links</h3>
-				<ul>
+    <div class="card4">
+      <h3>Links</h3>
+      <ul>
 
 				<li><a href="#home">Home </a></li>
 				<li><a href="about_us.html">About us </a></li>
@@ -283,20 +428,10 @@
 				<li><a href="#my-work">Projects</a></li>
 				<li><a href="#contact">Contact us </a></li>
 				</ul>
-			</div>
+    </div>
 
-			<div class="col4">
-				<h3>comment</h3>
-			<form name="submit-to-google-sheet">
-			<input type="text" name="Name" placeholder="Your name"required>
-			<input type="text" id="Email-field" name="Email" onkeyup ="validateEmail()" placeholder="Your email"required><br>
-			<span id="error"></span>
-			<p>Describe your task details below or leave a comment</p>
-		<textarea name="Message" placeholder="task description or any comments"required  rows="7"> </textarea>
-		<button class="btn">Send</button>
-         </form>
-			</div>
-		</div>
+    
+  </div>
 		
 
 
@@ -314,7 +449,21 @@
 </footer>
 
 lINK TO MAIN.JS FILE---->
-<script type="text/javascript" src="main.js"></script>
+<script>
+	var tablinks = document.getElementsByClassName("p-2");
+	var tabcontents = document.getElementsByClassName("tab_content");
+
+	function opentab(tabname) {
+		for (tablink of tablinks) {
+			tablink.classList.remove("active-link");
+		}
+		for (tabcontent of tabcontents) {
+			tabcontent.classList.remove("main_r");
+		}
+		event.currentTarget.classList.add("active-link");
+		document.getElementById(tabname).classList.add("main_r");
+	}
+</script>
 </body>
 
 </html>

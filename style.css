@@ -1,240 +1,612 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+
+:root {
+    --primary-dark: #1A120B; /* Dark Brown - This looks good */
+    --primary-light: #F5E8C7; /* Light Cream - Use this for default link color */
+    --primary-orange: #EAB56F; /* Accent Brown/Orange - Use this for hover/active */
+    --primary-green: #25d366; /* WhatsApp Green */
+}
 *
 {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
-	scroll-padding-top:2rem;
-}
-.hero{
-	height: 80vh;
-	width: 100%;
-
-}a{
-	text-decoration: none;
+  padding: 0;
+  margin: 1px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top:2rem;
+}html, body {
+  width: 100%;
+  height: 100%;
 }
 body
 {
-	
+  margin:0px;
+  text-align:center;
+  color:var(--text-on-dark);
+  font-size:36px;
+  animation:bg 5s linear infinite;
 
-	background-size: cover;
-	background-position: center;
-	
-	font-family: sans-serif; 
-}
-h1{
-	text-transform: capitalize;
-	font-weight: bold;
-	color: #ccc;
-	align-items: center;
-}
-nav
-{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 30px;
-	padding-left:8%;
-	padding-right: 8%;
-	background: #333;
-	position: fixed;
-	z-index: 100;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100px;
+/***************************************navbar css************************************************/
+/* Custom CSS Variables (assuming these are defined globally somewhere) */
+/* Custom CSS Variables (assuming these are defined globally somewhere) */
 
 }
+
+/* Navbar Branding (Your Name & Portfolio) */
+.navbar-brand {
+    font-family: 'Poppins', Arial, sans-serif; /* Consistent font */
+    font-size: 2.2rem; /* Make your name prominent */
+    font-weight: 700; /* Bold */
+    color: var(--primary-light); /* Light cream for "Denis" */
+    line-height: 1.2; /* Adjust line height for the multi-line brand */
+    /* Removed display: flex; from here as it's not typically needed for navbar-brand */
+}
+
+.navbar-brand span {
+    color: var(--primary-orange); /* Accent color for "Portfolio" */
+    font-weight: 500; /* Slightly lighter weight for "Portfolio" */
+}
+
+.navbar-brand a {
+    color: rgba(245, 232, 199, 0.7) !important; /* Lighter cream for CV link */
+    font-size: 0.8rem !important; /* Smaller font size for CV link */
+    text-decoration: none !important; /* Ensure no underline */
+    display: inline-block; /* Allows vertical margin if needed */
+    margin-top: 5px;
+}
+
+.navbar-brand a:hover {
+    color: var(--primary-orange) !important; /* Accent color on hover */
+    text-decoration: underline !important; /* Underline on hover */
+}
+
+/* Navbar Toggler Button (Hamburger Icon) */
+.navbar-toggler {
+    border-color: rgba(234, 181, 111, 0.7) !important; /* Accent border on toggler */
+}
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 .25rem rgba(234, 181, 111, 0.4) !important; /* Accent focus ring */
+}
+
+/* Navbar Links (UL and LI) */
+.navbar-nav .nav-item {
+    /* Removed color: #000; from here as it was redundant and might cause issues */
+    padding: 0 10px; /* Spacing between navigation items */
+}
+
+.navbar-nav .nav-link {
+    /* Changed color to primary-light to be visible on dark background */
+    color: var(--primary-light) !important;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 500; /* Medium weight */
+    font-size: 1.05rem; /* Slightly larger text */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--primary-orange) !important; /* Accent color on hover/focus */
+    border-bottom: 2px solid var(--primary-orange); /* Underline effect */
+    padding-bottom: 3px; /* Adjust padding to make space for underline */
+}
+
+/* Active Link Styling */
+.navbar-nav .nav-link.active {
+    color: var(--primary-orange) !important; /* Accent color for active link */
+    font-weight: 700 !important; /* Bold for active link */
+    border-bottom: 2px solid var(--primary-orange); /* Underline for active link */
+    padding-bottom: 3px;
+}
+/***************************************home section css************************************************/
+/* Homepage Section Styling */
+.homepage {
+  margin-top: 80px;
+    position: relative;
+    font-family: 'Poppins', Arial, sans-serif; /* Prefer Poppins if loaded, then Arial */
+    padding: 100px 5%; /* Ample top/bottom padding for the whole section */
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    display: flex; /* Use flexbox for overall layout within the homepage */
+    flex-direction: column;
+    justify-content: center; /* Vertically center content if there's extra space */
+    align-items: center; /* Horizontally center content */
+    background-color: #1A120B; /* Dark background for your homepage */
+    color: #F5E8C7; /* Light text for contrast */
+    text-align: center; /* Center text by default for this section */
+}
+
+/* Welcome Note (AMBETSA dev) */
+.welcome-note {
+    display: flex; /* Keeps "AMBETSA" and "dev" on the same line */
+    align-items: flex-end; /* Aligns "dev" to the bottom of "AMBETSA" */
+    margin-bottom: 20px; /* Space below this line */
+    color: #EAB56F; /* Accent color for the name */
+    justify-content: center; /* Center the entire "AMBETSA dev" block */
+}
+
+.animated-letter {
+    font-size: 6rem; /* Large size for individual letters */
+    font-weight: 700; /* Bold letters */
+    display: inline-block; /* Allows transformation on each letter */
+    /* animation properties for font-grow should be defined via @keyframes */
+}
+
+.dev-text {
+    font-size: 2.5rem; /* Size for "dev" */
+    font-weight: 400; /* Lighter weight for "dev" */
+    margin-left: 10px; /* Space between "AMBETSA" and "dev" */
+    color: #F5E8C7; /* Lighter color for 'dev' */
+}
+
+/* Introducing Section (Skills tagline) */
+.intro {
+    color: #F5E8C7; /* Light text for this section */
+    font-size: 2.2rem; /* Larger font size for the tagline */
+    line-height: 1.3; /* Improve readability */
+    margin-bottom: 40px; /* Space below the tagline */
+   max-width: 2000px; /*  Limit width for better readability */
+}
+
+.intro h1 {
+    font-size: inherit; /* Inherit font-size from .intro */
+    font-weight: 600; /* Semi-bold */
+}
+
+.intro span {
+    color: #EAB56F; /* Accent color for 'project management' */
+    font-weight: 700; /* Make it stand out */
+}
+
+/* Card 2 (Let's Build Better) */
+.card2 {
+    background-color: rgba(255, 255, 255, 0.08); /* Semi-transparent white background */
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 700px; /* Limit width for readability */
+    margin: 0 auto 40px auto; /* Center it with space below */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    text-align: center; /* Center text within the card */
+}
+
+.card2 .h2 { /* Targeting the <p class="h2"> */
+    font-size: 2rem; /* Make it a prominent heading */
+    color: #EAB56F; /* Accent color */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.card2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #F5E8C7; /* Light text color */
+}
+
+/* Buttons in Card 2 */
+.card2 .button { /* Specific targeting for buttons within card2 */
+    margin: 15px 10px 0; /* Space around buttons */
+    padding: 12px 25px;
+    border-radius: 50px; /* Pill shape */
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.card2 .btn-secondary { /* 'Let's Talk' button */
+    background-color: #EAB56F; /* Accent color */
+    border-color: #EAB56F;
+    color: #1A120B; /* Dark text on accent button */
+}
+
+.card2 .btn-secondary:hover {
+    background-color: #fca03c; /* Slightly brighter accent on hover */
+    border-color: #fca03c;
+    transform: translateY(-2px);
+}
+
+.card2 .btn-outline-secondary { /* 'Hire Me Today' button */
+    background-color: transparent;
+    border-color: #EAB56F; /* Accent border */
+    color: #EAB56F; /* Accent text */
+}
+
+.card2 .btn-outline-secondary:hover {
+    background-color: #EAB56F; /* Solid accent on hover */
+    color: #1A120B; /* Dark text on hover */
+    transform: translateY(-2px);
+}
+
+/* Box Icons (LinkedIn, Twitter, GitHub) */
+box-icon { /* Style for the custom box-icon elements */
+    width: 40px;
+    height: 40px;
+    fill: #F5E8C7; /* Light color for icons */
+    margin: 0 15px; /* Space between icons */
+    transition: fill 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+box-icon:hover {
+    fill: #EAB56F; /* Accent color on hover */
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Floating WhatsApp Button Styling - As provided, but review line-height */
+.whatsapp-float {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    bottom: 30px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px; /* Adjusted size for better vertical centering */
+    line-height: 70px; /* Should be equal to width/height for perfect vertical centering */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #1DA851;
+    transform: scale(1.05);
+}
+/*********************about us section css************************************************/
+/* Overall Section Styling */
+.about_us {
+    background-color: #F5E8C7; /* Light cream background for this section */
+    color: #1A120B; /* Dark text for contrast */
+    /* padding-top: 300px; - Removed, use Bootstrap's py-5 instead */
+}
+
+/* Specific styles for the main content area inside the container */
+.about_us .container {
+    /* No specific styles needed here typically, as row/col handle layout */
+}
+
+/* Image Column */
+.image {
+    /* flex-basis handled by Bootstrap col-md-4/6 */
+    /* margin-left: 160px; - Removed, spacing handled by Bootstrap row/col */
+    padding-bottom: 20px; /* Add some space below image on mobile before stacking */
+}
+
+.about-img {
+    width: 350px; /* Adjust size. Was 450px, which might be too large on smaller desktops */
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    border: 5px solid #EAB56F; /* Accent border color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    /* img-fluid from Bootstrap handles responsiveness of the image within its container */
+}
+
+/* "Hello, I'm Denis Ambetsa..." paragraph */
+/* This was present in your HTML, but often not needed with a clear About Me section */
+.about-col.image p {
+    color: #1A120B; /* Ensure text color is dark on light background */
+    font-size: 1.1rem;
+    /* This paragraph is now hidden by default (d-none) in the HTML for most views.
+       You can remove d-none if you want it to appear below the image. */
+}
+
+/* Text Column (Salutation) */
+.salutation {
+    /* flex-basis handled by Bootstrap col-md-6/5 */
+    padding-top: 10px; /* Keep minor padding if desired */
+    /* color, font-size, font-weight, margin-bottom are now handled specifically for h1/p */
+}
+
+.salutation-title {
+    font-size: 2.8rem; /* Make it more prominent */
+    font-weight: 700; /* Use valid font-weight */
+    color: #1A120B; /* Dark color on light background */
+    /* margin-bottom handled by Bootstrap mb-3 */
+}
+
+.words {
+    font-size: 1.15rem; /* Slightly larger for readability */
+    line-height: 1.7; /* Good line height for body text */
+    color: #333; /* Slightly softer dark color for paragraph */
+    /* margin-bottom handled by Bootstrap mb-4 */
+}
+
+/* Tab Titles (Education, Skills, Experience) */
+.tab_titles {
+    /* display: flex and margin handled by Bootstrap d-flex and mb-4 */
+    color: #1A120B; /* Dark text for the tabs */
+    margin-bottom: 40px; /* Keep some space below the tabs */
+}
+
+.tab_titles p { /* Target the paragraph elements directly */
+    font-size: 1.25rem; /* Larger tab text */
+    font-weight: 600; /* Medium bold */
+    cursor: pointer;
+    position: relative;
+    /* margin-right handled by Bootstrap me-4 */
+    color: #333; /* Default tab text color */
+}
+
+.tab_titles p.active-link {
+    color: #EAB56F; /* Accent color for the active tab */
+}
+
+.tab_titles p::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #EAB56F; /* Accent color for the underline */
+    transition: all 0.3s ease-in-out;
+}
+
+.tab_titles p.active-link::after {
+    width: 100%; /* Make the active tab's underline full width of the text */
+}
+
+/* Tab Content */
+.tab_content {
+    display: none; /* Hidden by default */
+    color: #1A120B; /* Dark text for tab content */
+    font-size: 1.05rem; /* Slightly smaller for detailed info */
+    line-height: 1.6;
+}
+
+.tab_content.main_r { /* This should be the active one by default */
+    display: block;
+}
+
+.tab_content p span {
+    color: #EAB56F; /* Accent color for highlighted text (e.g., degree names) */
+    font-weight: 600;
+}
+
+/* Mission, Vision, Company Statement Cards */
+.col1 .card { /* Target the card inside col1 */
+    background-color: #1A120B; /* Dark brown background for cards */
+    color: #F5E8C7; /* Light text for cards */
+    border: none; /* Remove default Bootstrap card border */
+    border-radius: 10px; /* Rounded corners for cards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.col1 .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.col1 .card i {
+    color: #EAB56F; /* Accent color for icons */
+    font-size: 3rem; /* Larger icon size */
+}
+
+.col1 .card h1 {
+    font-size: 1.8rem; /* Adjust heading size for cards */
+    font-weight: 700;
+    color: #EAB56F; /* Accent color for card headings */
+}
+
+.col1 .card p {
+    font-size: 1rem;
+    color: #F5E8C7; /* Light text for card paragraphs */
+}
+
+
+   
+/**************************************end of about us css ************************************************/
+.card2 p {
+	color: #000;
+}
+a{
+  text-decoration: none;
+}
+h1{  
+  text-transform: capitalize;
+  font-weight: 800px;
+
+  color: var(--primary-light);
+  align-items: center;
+}
+
 span
 {
-	color: #ccc; 
+  color: var(--primary-light); 
 }
-nav ul li{
-	list-style-type: none;
-	display: inline-block;
-	padding: 10px 25px; 
-}
-nav ul li a{
-	color: #eab56f;
-	text-decoration: none;
-	text-transform: capitalize;
-	font-weight: bold;
-}
-nav ul li a :hover{
-	color: blue;
-	
-	}
-	.sub-nav{
-		display: none;
-	}nav ul li a:lastchild :hover .sub-nav{
-		display: block;
-
-	}
-
-
-
-.homepage
+.card1
 {
-	
-	position: absolute;
-	margin: 2rem 5rem;
-	padding-top: 10%;
-	font-family: arial,sans-serif;
-	margin-top: 4%;
-
-	}.homepage p{
-		color: #fff;
-
-		font-size: 2rem;
-	}
-	.my-work
-	{
-		display:grid;
-	grid-template-columns: repeat(auto-fit,minmax(280px,auto));
-	grid-gap: 1.5rem;
-	
-	}.col{
-		background-color: #fff;
-		box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
-		padding: 15px;
-		border-radius: 0.5rem;
-
-
-
-
-		}.COL P{
-			font-size: 	0.9rem;
-			margin:5px 0 10px;
-			line-height: 	1.5rem; 	
-			display: -webkit-box;
-			-webkit-line-clamp:5;
-			-webkit-box-orient:vertical;
-			overflow: 	hidden;	
-
-
-
-
-			}.col img{
-	width: 	100%;
-	margin-top: 20px;
-	display: block;
-	border-radius: 20px;
-	margin-left: 10px;
-
-transition: transform 0.5s;
-
-}.col img:hover{
-	transform: translateY(-15px);
-	transform: scale(1.1);
-
-
-}.col1{
-	background-color: grey;
-	margin-top: 20px;
-	margin-left: 10px;
-	border-radius: 20px;
-	height: 300px;
-	justify-content: space-around;
-	transition: background 0.5s,transform 0.5s;
-	}.col1:hover{
-		background-color: #ff004f;
-		transform: translateY(-10px);
-
-	}.col1 i{
-		padding: 10px 20px;
-	}.col{
-		position: relative;
-		overflow: hidden;
-	}
-}.col1 div{
-	margin-left: 10px;
-	margin-top: 20px;
-}.card1 img{
-		width: 400px;
-	}#about_us h1{
-		text-align: center;
-	}
-	.about{
-		display: grid;
-		grid-template-columns: repeat(auto-fit,minmax(280px,auto));
-	     grid-gap: 1.5rem;
-		color: white;
-		width: 100%;
-		padding-top: 20px;
-		word-spacing: 4px;
-		white-space: 2px;
-		font-family: century;
-		line-height: 20px;
-		margin-bottom: 4rem;
-
-	}.main{
-		width: 1139px;
-		max-width: 97%;
-		margin:0 auto;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-	
-	}#contact
-	{
-		background-color: grey;
-	}.contact div
-	{
-		padding:10px 60px;
-		color: black;
-		font-size: 20px;
-		font-weight: bold;
-		justify-content: space-around;
-		display: flex;
+  background-color: var(--primary-dark);
+  border-radius: 20px;
+  height: auto;              
+  align-items: right;
+  transition: background 0.5s, transform 0.5s;
 }
-	.head1{
-		text-transform: capitalize;
-		font-size: 15px;
-		color: white;
-		font-weight: bold;
-	}
-	}.card2{
-		display:grid;
-		grid-gap: 40px;
-		margin-top: 20px;
-		grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-		 padding: 10px 5%;
-        font-size: 21px;
-        color: white;
-        background-color:#273248;
-  }.card2 ul li a {
-  	color: #eab56f;
+.cars1 p, .card1 h2{
+  color: var(--text-on-dark);
+  text-align: center;
+}
+.card1 h1{
+  font-size: 2rem;
+}
+.btn1{
+  display: flex;
+  margin: 30px;
+  padding: 10px;
+  border: none;
+  position:relative;  
+}
+.btn1-started{
+  margin: 10px;
+  border-radius: 30px;
+  color: var(--primary-dark);
+  width: auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  border-radius: 30px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: .5s;
+}
+.button{
+  display: inline;
+  margin: 20px;
+  background-color: var(--primary-orange);
+  border-radius: 30px;
+  font-size: 1.5rem;
+  width: 150px;
+  padding: 15px 30px;
+}
+.svgIcon {
+  height: 40px;
+  transition-duration: 1.5s;
+  padding-top: 15px;
+}
+.bell path {
+  fill: var(--primary-dark);
+}
+.button:hover {
+  background-color: var(--primary-green);
+  transition-duration: .5s;
+  border-radius: 30px;
+}
+.button:active {
+  transform: scale(0.97);
+  transition-duration: .2s;
+}
+.dev-text {
+  font-size: 4rem;
+  color : var(--primary-light);
+  margin-left: 10px;
+}
+.homepage box-icon
+{
+  size:200px;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.col1
+{
+  display: flex;
+  background-color: var(--primary-light);
+  box-shadow: 0 4px 14px rgba(33,33,33,0.1);
+  padding: 15px;
+  border-radius: 0.5rem;
+}
+.COL1 p
+{
+  font-size:  0.9rem;
+  margin:5px 0 10px;
+  line-height:  1.5rem;   
+  display: -webkit-box;
+  -webkit-line-clamp:5;
+  -webkit-box-orient:vertical;
+  overflow:hidden;  
+}
+.col1 img
+{
+  margin-top: 20px;
+  display: block;
+  border-radius: 20%;
+  margin-left: 0px;
+  transition: transform 0.5s;
+}
+.col1 img:hover
+{
+  transform: translateY(-15px) scale(1.1);
+}
+.col1
+{
+	position: relative;
+  overflow: hidden;
+  background-color: var(--primary-light);
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 20px;
+  height: 300px;
+  justify-content: space-around;
+  transition: background 0.5s,transform 0.5s;
+}
+.col1:hover
+{
+  background-color: var(--primary-orange);
+  color: var(--text-on-dark);
+  transform: translateY(-10px);
+}
+.col1 i
+{
+  padding: 10px 20px;
+}
+.card1 img
+{
+  width: 400px;
+}
+.main
+{
+  width: 1139px;
+  max-width: 100%;
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.head1
+{
+  text-transform: capitalize;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+.card2
+{
+	display:grid;
+	grid-gap: 40px;
+	margin-top: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+	padding: 10px 5%;
+	font-size: 21px;
+    color: white;
+    
+}
+  .card2 ul li a 
+{
+	color: #eab56f;
   	list-style:none;
-  }.container{
-
-  	max-width: 1300px;
-  	margin: auto;
-  	padding-left: 25px;
-  	padding-right: 25px;
-
-  }
-  .container h1{
-  	padding-left: 15%;
-  	color: #000
-
-
-
-  }.container{
-  	padding-top: 1px;
-  }
-
-  nav .fa{
-		display: none;
-	
-	}#services {
-  padding: 5rem 0;
-  background-color:;
-}#services h1{
+}
+.container
+{
+	margin: 0;
+	padding-top: 1px;
+	width: 100;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+#services
+{
+	margin-top: auto;
+	padding: 5rem 10rem;
+	background-color: var(--primary-light);
+}
+#services h1
+{
 	text-align: center;
 	padding-top: 5rem;
 }
-
-.services-container {
+.services-container
+{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -242,40 +614,52 @@ transition: transform 0.5s;
   margin: 0 auto;
   justify-items: center;
 }
-
-.service {
+.service
+{
   text-align: center;
   padding: 2rem;
-  background-color:transparent ;
+  background-color: var(--primary-light);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
    transition: box-shadow 0.3s ease;
-}.service:hover{
+}
+.service:hover
+{
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 1.8)  ;
 }
-
-.service img {
+.service img
+{
   width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
-}#services h2{
+}
+#services h2
+{
 	margin-bottom: 20px;
-
 	text-align: center;!important
 } 
-
-.service h3{
+.service h3
+{
   font-size: 1.8rem;
   margin: 0;
 }
-
-.service p {
-  font-size: 1.1rem;
+.service p
+{
+ font-size: 1.1rem;
 }
+.service-contents h2{
+	padding-top: 5rem;
+}
+.service-contents{
+	display: none;
+}.service-contents.active-content{
+	display: block;
 
-.service a {
+}
+.service a
+{
   display: inline-block;
   padding: 0.8rem 1.5rem;
   margin-top: 1rem;
@@ -286,27 +670,76 @@ transition: transform 0.5s;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
-
-.service a:hover {
+.service a:hover
+{
   background-color: #555;
-}.message-container{
+}
+/**************************************recommendation section*****************************************/
+
+.achievements {
+  display: flex; /* Arranges cards horizontally */
+  justify-content: center; /* Centers the cards */
+  gap: 30px; /* Spacing between the cards */
+  padding: 50px 20px; /* Vertical and horizontal padding */
+  background-color: #f4f4f4; /* Light background for the section */
+  font-family: Arial, sans-serif; /* Common, readable font */
+}
+
+.achievement-card {
+  background-color: #ffffff; /* White background for each card */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 30px; /* Internal spacing */
+  text-align: center; /* Centers the text within the card */
+  flex: 1; /* Allows cards to grow and shrink proportionally */
+  max-width: 300px; /* Maximum width for each card */
+}
+
+.achievement-card .number {
+  font-size: 3em; /* Large font size for the numbers */
+  font-weight: bold; /* Bold numbers */
+  color: #333; /* Darker color for numbers */
+  display: block; /* Ensures number takes its own line */
+  margin-bottom: 10px; /* Space below the number */
+}
+
+.achievement-card .label {
+  font-size: 1.2em; /* Readable font size for the labels */
+  color: #555; /* Slightly lighter color for labels */
+  text-transform: uppercase; /* Uppercase for labels */
+  letter-spacing: 1px; /* Spacing between letters for labels */
+}
+
+/************************** css for my work section ***************************************************/
+.my-work
+{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,auto));
+  grid-gap: 1.5rem;  
+}
+.message-container
+{
 	margin-top: 10rem;
 	padding-top: 4rem;
 	 max-width: 800px;
-  margin:auto;
-  height: 500px;
-  background-color: rgb(29,28,24);
-   border-radius: 20px;
-   margin-bottom: 4rem;
-  }#message{
-  	 padding: 2rem 0;}
-  	 #message h1{
+	 margin:auto;
+	 height: 500px;
+	 background-color: var(--primary-dark);
+	 border-radius: 20px;
+	 margin-bottom: 4rem;
+}
+#message
+{
+  	 padding: 2rem 0;
+}
+#message h1
+{
   	 font-size: 2rem;
   	 margin: 4rem 2rem;
   	 padding-top: 2rem;
-
   }
-  #message p {
+  #message p
+  {
 	height: 100%;
 	 margin: 4rem 2rem;
     display: block;
@@ -314,219 +747,346 @@ transition: transform 0.5s;
     line-height: 1.6;
     font-size: 1.2rem;
    
-}#tech-tips {
-  padding: 3rem 0;
-  margin-top: 8rem;
-  background-color: #f9f9f9;
-}#tech-tips h2{
 
-	text-align: center;
+}
+/***************************************contact us section css************************************************/
+#contact-section {
+    background-color: #1A120B; /* Dark brown background for the section */
+    padding: 80px 20px; /* Ample padding top/bottom and some side padding */
+    text-align: center; /* Center content within the section */
+    color: #F5E8C7; /* Light text color for contrast */
 }
 
-.tech-tips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* Styling for the .contact div (the form wrapper) */
+.contact {
+    max-width: 600px; /* Limit the form's width for better readability */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 40px; /* Internal padding for the form box */
+    background-color: rgba(26, 18, 11, 0.8); /* Slightly lighter dark brown with transparency */
+    border-radius: 10px; /* Rounded corners for the form box */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Styling for the "Get in touch" heading */
+.contact h3 {
+    font-size: 2.5rem; /* Larger font size for prominence */
+    color: #EAB56F; /* Accent color for the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    text-transform: capitalize; /* Ensure consistent capitalization */
+}
+
+/* Styling for the paragraph describing the task details */
+.contact p {
+    font-size: 1.1rem;
+    margin-top: 25px; /* Space above this paragraph */
+    margin-bottom: 15px; /* Space below this paragraph */
+    color: #F5E8C7; /* Light text color */
+}
+
+/* Styling for input fields and textarea */
+.contact form input,
+.contact form textarea {
+    width: calc(100% - 20px); /* Full width minus padding for input */
+    padding: 15px 10px; /* Internal padding for text input */
+    margin-bottom: 20px; /* Space between fields */
+    border: 1px solid #EAB56F; /* Accent border color */
+    border-radius: 5px; /* Slightly rounded input fields */
+    background-color: rgba(255, 255, 255, 0.08); /* Very subtle transparent white background */
+    color: #F5E8C7; /* Light text color for input */
+    font-size: 1rem;
+    outline: none; /* Remove default focus outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+/* Placeholder text color */
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+    color: rgba(245, 232, 199, 0.6); /* Slightly faded light cream */
+}
+
+/* Focus styles for input fields and textarea */
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: #F5E8C7; /* Border turns light cream on focus */
+    box-shadow: 0 0 8px rgba(234, 181, 111, 0.5); /* Glow effect on focus */
+}
+
+/* Specific styling for the email error message */
+#error {
+    display: block; /* Ensures it takes its own line */
+    color: #ff4f4f; /* A clear red for error messages */
+    font-size: 0.9rem;
+    margin-top: -10px; /* Pull it up closer to the email field */
+    margin-bottom: 15px; /* Space below it */
+    text-align: left; /* Align error message to the left */
+}
+
+/* Styling for the Send button */
+.contact .btn { /* Use .contact .btn for higher specificity if other .btn styles exist */
+    display: inline-block; /* Allows width and padding to be applied */
+    width: auto; /* Auto width based on content */
+    padding: 15px 40px; /* Generous padding for a clear button */
+    background-color: #EAB56F; /* Accent color for the button */
+    color: #1A120B; /* Dark text on accent button for contrast */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* More rounded pill-shape */
+    font-size: 1.2rem; /* Clear font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin-top: 20px; /* Space above the button */
+}
+
+.contact .btn:hover {
+    background-color: #fca03c; /* Slightly brighter accent on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+.contact .btn:active {
+    transform: translateY(0); /* Push down effect on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow on active */
+
+  /*****************************************************************start of my project section*********************/
+
+}
+
+.whyme-card {
   max-width: 1200px;
-  margin: 0 auto;
-}
+  align-items: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+  boarder-radius: 12px;
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+  margin: 30px 280px; /* Center the card */
 
-.tech-tip {
-  text-align: center;
-  margin:2rem;
-  padding: 2rem 0;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.tech-tip h3 {
-  font-size: 1.8rem;
-  margin-top: 1rem;
-}
 
-.tech-tip p {
-  font-size: 1.2rem;
-}.service-contents h2{
-	padding-top: 5rem;
-}
-.service-contents{
-	display: none;
-}.service-contents.active-content{
-	display: block;
+
 
 }
-footer
+    /*****************************************************************start of footer section*********************/
+
+/* Footer container */
+footer {
+  background-color: var(--footer-bg, #111); /* fallback if var not defined */
+  color: var(--text-on-dark, #fff);
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Layout: 3 columns */
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Each column */
+footer .card4 {
+  flex: 1 1 30%; /* Grow, shrink, basis */
+  margin: 10px;
+  min-width: 250px;
+}
+
+/* Column headings */
+footer .card4 h3 {
+  margin-bottom: 10px;
+  color: var(--primary-green);
+}
+
+/* Footer logo */
+footer .logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph spacing */
+footer .card4 p {
+  margin: 8px 0;
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 768px) {
+  footer .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .card4 {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .card4 a {
+    justify-content: center;
+  }
+}
+
+    footer .card4 a {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px 0;
+  color: var(--text-on-dark);
+  text-decoration: none;
+}
+
+footer .card4 a:hover {
+  color: var(--primary-green);
+}
+
+footer .card4 i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+}
+/********************************************************** css for small screen ********************************************************/
+@media (max-width: 600px) {
+   .navbar-collapse {
+        background-color: var(--primary-dark); /* Dark background for collapsed menu */
+        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator line */
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center; /* Center links when collapsed */
+    }
+
+    .navbar-nav .nav-item {
+        padding: 8px 0; /* Vertical padding for stacked links */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.15rem; /* Slightly larger links on mobile */
+        display: block; /* Make links take full width for easier tapping */
+        width: fit-content; /* Allow centering */
+        margin: 0 auto; /* Center individual link text */
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus,
+    .navbar-nav .nav-link.active {
+        border-bottom: none; /* Remove underline when stacked */
+        color: var(--primary-orange) !important; /* Still accent color on active/hover */
+    }
+    .navbar-nav .nav-link.active {
+        font-weight: 700;
+    }
+   .about_us {
+        text-align: center; /* Center content on smaller screens */
+    }
+
+    .salutation-title {
+        font-size: 2rem; /* Adjust heading size for mobile */
+    }
+
+    .words {
+        font-size: 1rem; /* Adjust text size for mobile */
+    }
+
+    .tab_titles {
+        flex-wrap: wrap; /* Allow tabs to wrap if needed */
+        justify-content: center !important; /* Force center tabs on mobile */
+    }
+
+    .tab_titles p {
+        font-size: 1.1rem; /* Smaller tab text on mobile */
+        margin: 0 10px 10px; /* Adjust spacing for wrapped tabs */
+    }
+
+    .tab_titles p.active-link::after {
+        width: 100%; /* Keep underline full width for active tab */
+    }
+
+    .about-img {
+        width: 200px; /* Smaller image on mobile */
+        height: 200px;
+    }
+    .contact {
+        padding: 30px 20px; /* Reduce padding on smaller screens */
+        max-width: 100%; /* Allow it to take full width */
+        border-radius: 0; /* Remove border-radius on small screens for edge-to-edge feel */
+    }
+
+    .contact h3 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    .contact form input,
+    .contact form textarea {
+        width: 100%; /* Ensure full width on mobile */
+        padding: 12px; /* Slightly less padding */
+    }
+
+    .contact .btn {
+        width: 80%; /* Button takes more width on mobile */
+        font-size: 1.1rem;
+        padding: 12px 30px;
+	}
+
+.about
 {
-	margin-top: 40px;
-	width: 100%;
-position: ;
-bottom:0;
-background:linear-gradient(to right, #00093c, #2d0b00);
-color:#fff;
-padding:100px 0 30px;
-border-top-left-radius:;
-font-size:13px;
-line-height:20px;
-}.row{
-	width: 85%;
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
-	align-items:flex-start;
-	justify-content: space-between;
-}
-.col4{
-
-	flex-basis: 25%;
-	padding: 10px;
-}.col4:nth-child(1){
-	flex-basis: 20%;
-}
-
-.col4:nth-child(3){
-	flex-basis: 15%;
-
-
-
-	}.logo{
-	width: 100px;
-	margin-bottom: 20px;
-}.col4 h3{
-	width: fit-content;
-	margin-bottom: 40px;
-	position: relative;
-}.col4 i{
-	font-size: 30px;
-	width: 30px;
-	align-items: center;
-	}.email-id{
-	border-bottom: 1px solid #ccc;
-	
-}
-
-
-ul li{
-	list-style: none;
-	margin-bottom: 12px;
-}ul li a{
-	text-decoration: none;
-	color: #fff;
-}form{
-	padding-bottom: 15px;
-	display: block;
-	align-items: center;
-	justify-content: space-between;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 30px;
-
-
-
-}
-form input,textarea{
-	width: 100%;
-	background:;
-	color: #ccc;
-	border: 0;
-	outline: none;
-	padding: 15px;
-		margin: 5px 0;
-		color: #fff;
-		font-size: 15px;
-		border-radius: 10px;
-		align-items: center;
-		justify-content: center;
-}form button{
-	margin: 10px 0;
-	background:;
-	border: 0;
-	outline: none;
-	cursor: pointer;
-	color: #ccc;
-}textarea{
-	height: 5rem;
-
-	}form input,form textarea{
-	color: #000;
-}
-	.btn{
-padding: 15px 30px;
-font-size: 18px;
-margin: 20px 120px 50PX;
-cursor: pointer;
-border: 1px solid #fff;
-border-radius: 6px;
-display: block;
-transition: background 0.5s;
-
-	}.btn:hover{
-		background: #eab56f;
-	}#services {
-  padding: 5rem 0;
-  background-color:;
-}
-
- /* cssfor small screen */
-
-  @media only screen and (max-width: 600px){
-
-.about{
 	padding-top: 20px;
 }
 #services
 {
 	padding-top: 20rem;
-
-
-	}
-	.homepage
-{
-	
-	padding: 30% 0;
-
+}
+.homepage{
+	padding: 1% 0;
 	transform: translateY(-2%);
-	
-	}nav .fa{
+}.whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+        line-height: 50px;
+    }
+nav .fa{
 		display: block;
-		font-size: 15px;}
-		nav ul{
-			background: #333;
-			position: fixed;
-			top: 0;
-			right: -288px;
-			width: 150px;
-			height: 45vh;
-			padding-top: 50px;
-			z-index: 2;
-			transition:right 1s;
-		}nav ul li{
-			display: block;
-			margin: 10px;
-		}nav ul .fa{
+		font-size: 15px;
+}
+nav ul
+{
+	background: var(--primary-dark);
+	position: fixed;
+	top: 0;
+	right: -288px;
+	width: 150px;
+	height: 45vh;
+	padding-top: 50px;
+	z-index: 2;
+	transition:right 1s;
+
+}
+nav ul li
+{
+	display: block;
+	margin: 10px;
+}
+nav ul .fa{
 			position: absolute;
 			top: 20px;
 			left: 50px;
 			cursor: pointer;
-		}
-		h1{
+}
+h1{
 	text-transform: capitalize;
 	font-weight: bold;
 	color: #fcfc;
 	align-items: center;
 	font-size: 20px;
-}.col-1{
+}
+.col-1{
 	flex-basis: 100%;
-
-
-
-	}.col-2{
-
-flex-basis: 100%;
-padding-left: 50px;
-
-	}
-
-	.contact div{
+}
+.col-2{
+	flex-basis: 100%;
+	padding-left: 50px;
+}
+.contact div{
 	display: block;
 	padding: 20px 50px;
 	align-items: center;
@@ -536,34 +1096,19 @@ padding-left: 50px;
 	align-items: center;
 	color: #000;
 }
-
 #msg{
-		margin-top:-40px;
-		display: block;
-
-
-	}footer{
-		bottom: unset;
-	}
+	margin-top:-40px;
+	display: block;
+}
+footer{
+	bottom: unset;
+}
 .col4{
 	flex-basis: 100%;
-	}
-
+}
 .col4:nth-child(1){
 	flex-basis: 100%;
-	}.col4:nth-child(3){
+}
+.col4:nth-child(3){
 	flex-basis: 100%;
-	}}
-
-
-
-
-
-
-
-
-
-
-
-
-  }
+}
